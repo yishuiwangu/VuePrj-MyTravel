@@ -1,16 +1,18 @@
 <template>
    <div>
      <div class="banner" @click="handleBannerClick">
-       <img class="banner-img" src="http://img1.qunarzz.com/sight/p0/1705/c2/c2249cf7d5ae5b71a3.img.jpg_600x330_2dd75e54.jpg" />
+       <img class="banner-img" :src="bannerImg" />
        <div class="banner-info">
-         <div class="banner-title">澳门巴黎人自助餐厅</div>
+         <div class="banner-title">{{this.sightName}}</div>
          <div class="banner-number">
             <span class="iconfont banner-icon">&#xe692;</span>
-            55
+            {{this.bannerImgs.length}}
          </div>
        </div>
      </div>
-     <common-gallary :imgs="imgs" v-show="showGallary"
+     <common-gallary 
+     :imgs="bannerImgs" 
+     v-show="showGallary"
      @close="handleGallaryClick"
      ></common-gallary>
    </div>
@@ -23,8 +25,8 @@ export default{
     data () {
       return {
         showGallary: false,
-        imgs: [ 'http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_800x800_70debc93.jpg',
-            'http://img1.qunarzz.com/sight/p0/1709/76/7691528bc7d7ad3ca3.img.png_800x800_9ef05ee7.png']
+        // imgs: [ 'http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_800x800_70debc93.jpg',
+        //     'http://img1.qunarzz.com/sight/p0/1709/76/7691528bc7d7ad3ca3.img.png_800x800_9ef05ee7.png']
       }
     },
     methods: {
@@ -37,6 +39,11 @@ export default{
     },
     components:{
       CommonGallary
+    },
+    props:{
+       sightName: String,
+       bannerImg: String,
+       bannerImgs: Array
     }
   }
 </script>
