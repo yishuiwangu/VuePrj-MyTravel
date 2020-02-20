@@ -10,6 +10,7 @@ import fastclick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 import store from './store/index.js'
+import 'babel-polyfill'
 
 Vue.config.productionTip = false
 /* 使用fastclick解决移动端300毫秒问题 */
