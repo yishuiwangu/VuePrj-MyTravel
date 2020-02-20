@@ -46,6 +46,8 @@
       getHomeInfo: function() {
         /* axios.get('http://127.0.0.1:9090/test/getHome') */
         /* 通告config/index.js配置 转发到/static/mock/index.json*/
+        
+axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';
         axios.get('/api/index.json?city=' + this.city)
           .then(this.getHomeInfoSucc)
       },
